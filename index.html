@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<meta charset="utf-8" />
+			<title>BMW.cars</title>
+			<link rel="stylesheet" href="css/font-awesome.min.css">
+			<link rel="stylesheet" href="css/bootstrap.min.css">
+			<link href="https://fonts.googleapis.com/css?family=Sedgwick+Ave+Display" rel="stylesheet">
+			<style type="text/css">		  
+			.navbar {margin-bottom: 0}
+			.navbar-inverse {background-color: #383d79} 
+			.navbar-inverse .navbar-nav>.active>a,
+			.navbar-inverse .navbar-nav>.active>a:focus,
+			.navbar-inverse .navbar-nav>.active>a:hover {background-color: #985ca2}
+			.dropdown-menu{background-color: #383d79; border-top: 3px solid #985ca2}
+			.dropdown-menu .divider{background-color: #985ca2}  
+			.navbar-inverse .navbar-nav>li>a{color: #a19fea ;padding-top: 20px ; padding-bottom: 20px ; font-size: 16px ; border-radius: 40%}
+			.dropdown-menu>li>a {color: #a19fea ; padding: 6px 20px ;-wibkit-transition: padding 0.5s ease ;-moz-transition: padding 0.5s ease ;-o-transition: padding 0.5s ease ;transition: padding 0.5s ease ; border-radius: 30%}
+			.dropdown-menu>li>a:focus, 
+			.dropdown-menu>li>a:hover { color:#383d79 ; background-color:#985ca2 ; padding-left: 30px}
+			.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover {background-color: #383d79}
+			.navbar-right .dropdown-menu {right: auto; left: 0}
+			.navbar-brand {font-size: 35px ; line-height: 42px ; }
+			.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand{margin-left: 45px}
+			.navbar-inverse .navbar-brand span {font-size: 58px ; color: #43bccc ; font-family: 'Sedgwick Ave Display', cursive;}
+			.navbar-inverse .navbar-brand {color: #cb89d6 }
+			.carousel-caption {bottom: 444px ; text-align: left; color: #020302}
+			.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {font-weight: 600}
+			.btn-primary {background-color: #985ca2 ; border-color: #985ca2}
+			.btn-primary:hover {background-color: #985ca2 ; border-color: #985ca2}
+			.carousel-indicators .active {background-color: #985ca2}
+			.carousel-indicators li {border: 1px solid #985ca2;}
+			.about {padding-top: 60px ; padding-bottom: 60px ; }
+			.about .oka1 {color: #43bccc ; font-family: 'Sedgwick Ave Display', cursive; }
+			.about .oka2 {color: #985ca2; }
+			.about .lead {margin-top: 15px ; color: #888 ; }
+			.features {background-color: #eee ; padding-top: 50px ; padding-bottom: 50px }
+			.features .oka3 span.glyphicon {font-size: 25px}
+			.testm {padding-bottom: 50px ; padding-top: 50px}
+			.testm h2 {font-weight: bold ; margin-bottom: 20px}
+			.testm span {font-weight: bold ; font-size: 18px ; color: #985ca2 }
+			.testm .carousel-inner {min-height: 60px}
+			.testm .carousel-indicators {position: static ; width: 100% ; margin-left: auto ; padding-top: 20px}
+			.testm .carousel-indicators li {text-indent: 0 ; width: 80px ; height: 80px ; opacity: 0.6 ; border: 2px solid #fff ; border-radius: 50% ; overflow: hidden; margin: 5px ; -wibkit-transition: all 0.5s ease ;-moz-transition: all 0.5s ease ;-o-transition: all 0.5s ease ;transition: all 0.5s ease}
+			.testm .carousel-indicators li img {max-width: 100% ; }
+			.testm .carousel-indicators li.active {opacity: 1 ; background: none ; }
+			.price {background-color: #eee; padding-bottom: 40px;}
+			.price .price-box {background: #969598 ; padding: 5px ; border: 1px solid #985ca2 ; margin-bottom: 15px}
+			.price .price-box p {font-size: 30px ; font-weight: bold ; width: 150px ; height: 150px ;background-color: #eedaf3 ; border-radius: 50% ; line-height: 150px}
+			.price-box .list-unstyled {line-height: 2 ; }
+			.price-box .btn {margin-bottom: 15px}
+			.team {background: url(img/our-team-bakgrnd.jpg) no-repeat center center fixed ;width: 100% ; min-height: 600px; -wibkit-background-size:cover ;-moz-background-size:cover ;-o-background-size:cover ;background-size:cover  }
+			.team .work {background: rgba(2,2,2,0.8); color: #fff ; min-height: 600px ; padding-top: 40px ; padding-bottom: 40px}
+			.team .work h1 {margin-bottom: 60px  }
+			.sub {padding-bottom: 40px ; padding-top: 40px ; background-color: #ddd}
+			.sub h1 {color: #888 ; margin-bottom: 25px }
+			.sub .form-control {border: 0 ; margin-right: -5px ; width: 300px ; background:rgba(2,2,2,0.7); color: #fff}
+			.sub button {width: 120px}
+			.stat {background: url(img/statistics.jpg) no-repeat center center fixed ; width: 100% ; min-height: 400px ; -wibkit-background-size:cover ;-moz-background-size:cover ;-o-background-size:cover ;background-size:cover }
+			.stat .stat1 {background: rgba(2,2,2,0.7); color: #fff ; min-height: 400px ; padding-top: 40px ; padding-bottom: 40px}
+			.stat h1 {margin-bottom: 60px}
+			.stat p {font-size: 35px; margin-bottom: 0}
+			.stat span {font-size: 18px }
+			.stat .data {margin-bottom: 10px ; -wibkit-transition: all 0.5s ease ;-moz-transition: all 0.5s ease ;-o-transition: all 0.5s ease ;transition: all 0.5s ease}
+			.stat .data:hover {color:#985ca2 }
+			.disacount {background-color: #88878a ; padding-top: 40px ; padding-bottom: 40px ;color: #fff}
+			.disacount h1 { margin-bottom: 30px }
+			.disacount img {width: 180px ; height: 60px ; border-radius: 50% }
+			.disacount .progress {height: 40px ; margin-bottom: 0 ; background-color: #b9cad8}
+			.disacount .progress-bar {background-color: #223440}
+			.disacount .col-md-offset-1 {height: 60px}
+			.disacount h2 {margin-top: 0 ; margin-bottom: 10px}
+			.contact {background: url(img/service.jpg) no-repeat center center fixed ; width: 100% ; min-height: 550px ; -wibkit-background-size:cover ;-moz-background-size:cover ;-o-background-size:cover ;background-size:cover}
+			.contact .us {background: rgba(2,2,2,0.8); color: #fff ; min-height: 550px ; padding-top: 40px ; padding-bottom: 40px}
+			.contact .us p {margin-bottom: 50px}
+			.contact .us textarea {height: 83px;background: rgba(82,78,87,0.7); color: #fff;border:none;}
+			.contact .us button {height: 37px ; margin-top: 15px ; line-height: 17px}
+			.contact .us input {background: rgba(82,78,87,0.7); color: #fff;border:none;}
+			.footer {background-color: #1d1d1d ; color: #aaa ; padding-top: 20px ; padding-bottom: 20px ; line-height: 2.8}
+			.footer a {color: #aaa}
+			.footer a:hover {color: #fff ; text-decoration: none}
+			.footer hr {color: #aaa}
+
+			</style> 
+		</head>
+		<body>
+			<nav class="navbar navbar-inverse">
+			  <div class="container-fluid">
+			    <div class="navbar-header">
+			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			      </button>
+			      <a class="navbar-brand" href="#"><span> BMW </span>cars.</a>
+			    </div>
+			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			      <ul class="nav navbar-nav navbar-right">
+			        <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+			        <li><a href="#">All Models</a></li>
+			        <li><a href="#">Offer & Service</a></li>
+			        <li class="dropdown">
+			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Fascination BMW <span class="caret"></span></a>
+			          <ul class="dropdown-menu">
+			            <li><a href="#">BMW Luxury Class</a></li>
+			            <li><a href="#">BMW Next 100</a></li>
+			            <li><a href="#">BMW EfficientDynamics</a></li>
+			            <li role="separator" class="divider"></li>
+			            <li><a href="#">BMW Magazine</a></li>
+			          </ul>
+			        </li>
+			            <li><a href="#">Map</a></li>
+			            <li><a href="#">Contact Us</a></li>
+			      </ul>
+			    </div><!-- /.navbar-collapse -->
+			  </div><!-- /.container-fluid -->
+			</nav>
+
+
+			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+				  <!-- Indicators -->
+				  <ol class="carousel-indicators">
+				    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+				    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+				    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+				    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+				    <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+				  </ol>
+
+				  <!-- Wrapper for slides -->
+				  <div class="carousel-inner" role="listbox">
+				    <div class="item active">
+				      <img src="img/carousel1.jpg" alt="pic 1">
+				      <div class="carousel-caption">
+				        <h1> BMW i vision DYNAMICS.</h1><div class="btn btn-primary"> Find out more</div>
+				      </div>
+				    </div>
+
+				    <div class="item">
+				      <img src="img/carousel2.jpg" alt="pic 2">
+				      <div class="carousel-caption">
+				        <h1> THE X7 CONCEPT</h1><div class="btn btn-primary"> Find out more</div>
+				      </div>
+				    </div>
+				    
+
+				    <div class="item">
+				      <img src="img/carousel3.jpg" alt="pic 3">
+				      <div class="carousel-caption">
+				        <h1> BORN TO BE WILDER</h1><div class="btn btn-primary"> Find out more</div>
+				      </div>
+				    </div>
+				    
+
+
+				    <div class="item">
+				      <img src="img/carousel4.jpg" alt="pic 4">
+				      <div class="carousel-caption">
+				        <h1> EN VOGUE SINCE 1977</h1><div class="btn btn-primary"> Find out more</div>
+				      </div>
+				    </div>
+				    
+
+				    <div class="item">
+				      <img src="img/carousel5.jpg" alt="pic 5">
+				      <div class="carousel-caption">
+				        <h1> RETURN TO A NEW ERA.</h1><div class="btn btn-primary"> Find out more</div>
+				      </div>
+				    </div>
+				    
+
+				  </div>
+
+
+
+				  <!-- Controls -->
+			<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+				    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				    <span class="sr-only">Previous</span>
+			</a>
+
+
+
+			<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+				    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				    <span class="sr-only">Next</span>
+			</a>
+
+
+	</div>
+
+
+	<section class="about text-center">
+		<div class="container">
+		<h1>This is our new cars from <span class="oka1">BMW </span><span class="oka2"> cars.</span></h1>
+		<p class="lead">We helping you to find your all needs in<strong> BMW cars. </strong>website</p>
+		</div>
+	</section>
+
+
+	<section class="features text-center">
+		<div class="container">
+			<h1>BMW CONNECTED DRIVE</h1>
+			<div class="row">
+				<div class="col-lg-3 col-md-6">
+					<div class="oka3">
+						<span class="glyphicon glyphicon-phone"></span>
+						<h4>Digital Services</h4>
+						<p>Free to do what you really want to. With the Digital Services.</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="oka3">
+						<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+						<h4>Connect Everything</h4>
+						<p> connect you with everything you consider important.</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="oka3">
+						<span class="glyphicon glyphicon-road" aria-hidden="true"></span>
+						<h4>CoPilot Driver</h4>
+						<p>BMW Personal CoPilot Driver Assistance offers you greater comfort</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="oka3">
+						<span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
+						<h4> Travel Guide</h4>
+						<p>you decide who your travelling companion should be.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+	<section class="testm text-center">
+		<div class="container">
+		<h2>What our client say </h2>
+			<div id="our" class="carousel slide" data-ride="carousel">
+				  <!-- Indicators -->
+
+
+				  <!-- Wrapper for slides -->
+				  <div class="carousel-inner" role="listbox">
+				    <div class="item active">
+				    	 <p class="lead">So the 6 series used to be a coupe. And now here is a four door large hatchback/pseudo wagon? I’m thoroughly confused.</p>
+				    	 <span>Jebadiah Stonewall Bacon</span>
+
+				    </div>
+
+
+
+				    <div class="item">
+				    	 <p class="lead">In Taiwan 640iGT booking production in September now only tell me no way to produce the car is very exaggerated!</p>
+				    	  <span>Maqsood Ahmed Mahar</span>
+
+				    </div>
+
+
+				    
+
+				    <div class="item">
+				    	<p class="lead">Well i see that is a good company, and i´m also see taht is a good pucture.. ;) Many thank´s have a nice great day BMW</p>
+				    	 <span>Henrique Rita</span>
+
+				    </div>
+
+
+
+
+				    <div class="item">
+				    	<p class="lead">I don’t now why this car named 6 series gt she does not look like 6 series, i think it’s better 5series gt</p>
+				    	<span>Mehdi Brahimi</span>
+
+				    </div>
+				    
+
+
+
+				    
+
+			  </div>
+				  <ol class="carousel-indicators">
+				    <li data-target="#our" data-slide-to="0" class="active"><img src="img/clint1.jpg"></li>
+				    <li data-target="#our" data-slide-to="1"><img src="img/clint2.jpg"></li>
+				    <li data-target="#our" data-slide-to="2"><img src="img/clint3.jpg"></li>
+				    <li data-target="#our" data-slide-to="3"><img src="img/clint4.jpg"></li>
+				  </ol>
+         </div>
+	</div>
+
+
+
+	</section>
+
+
+	<section class="price text-center">
+		<div class="container">
+			<h2>Our Amazing Prices</h2>
+			<div class="row">
+
+				<div class="col-md-3 col-sm-6">
+					<div class="price-box">
+						<h4 class="text-primary">BMW 1 Series</h4>
+						<p class="center-block">$250.000</p>
+							<ul class="list-unstyled">
+								<li>Acceleration 4.7</li>
+								<li>Maximum speed 250</li>
+								<li>Consumption 7.8</li>
+							</ul>
+							<a href="#" class="btn btn-primary">Order Now</a>
+					</div>
+				</div>
+
+				<div class="col-md-3 col-sm-6">
+					<div class="price-box">
+						<h4 class="text-primary">BMW 225xe</h4>
+						<p class="center-block">$400.000</p>
+							<ul class="list-unstyled">
+								<li>Acceleration 3.7</li>
+								<li>Maximum speed 300</li>
+								<li>Consumption 4.7</li>
+							</u>
+							<a href="#" class="btn btn-primary">Order Now</a>						
+					</div>
+				</div>
+
+				<div class="col-md-3 col-sm-6">
+					<div class="price-box">
+						<h4 class="text-primary">BMW M240i</h4>
+						<p class="center-block">$720.000</p>
+							<ul class="list-unstyled">
+								<li>Acceleration 4.1</li>
+								<li>Maximum speed 250</li>
+								<li>Consumption 6.3</li>
+							</ul>
+							<a href="#" class="btn btn-primary">Order Now</a>						
+					</div>
+				</div>
+
+				<div class="col-md-3 col-sm-6">
+					<div class="price-box">
+						<h4 class="text-primary">BMW M550d</h4>
+						<p class="center-block">$159.000</p>
+							<ul class="list-unstyled">
+								<li>Acceleration 3</li>
+								<li>Maximum speed 350</li>
+								<li>Consumption 7.4</li>
+							</ul>
+							<a href="#" class="btn btn-primary">Order Now</a>						
+					</div>
+				</div>												
+			</div>
+		</div>
+	</section>
+
+
+
+
+
+
+
+	<section class="team text-center">
+		<div class="work">
+			<div class="container">
+				<h1>Meet Our Team</h1>
+				<div class="row">
+					<div class="col-lg-3 col-sm-6">
+						<div class="person"><img class="img-circle" src="img/ourTeam1.jpg"></div>
+						<h3>Evan Stewart</h3>
+						<i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i>
+						<i class="fa fa-google-plus fa-2x" aria-hidden="true"></i>
+						<i class="fa fa-pinterest-square fa-2x" aria-hidden="true"></i>
+						<i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
+					</div>
+
+					<div class="col-lg-3 col-sm-6">
+						<div class="person"><img class="img-circle" src="img/ourTeam2.jpg"></div>
+						<h3>Brian Watt</h3>
+						<i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i>
+						<i class="fa fa-instagram fa-2x" aria-hidden="true"></i>
+						<i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
+						<i class="fa fa-youtube fa-2x" aria-hidden="true"></i>
+					</div>
+
+					<div class="col-lg-3 col-sm-6">
+						<div class="person"><img class="img-circle" src="img/ourTeam3.jpg"></div>
+						<h3>Daniel Christopher</h3>
+						<i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i>
+						<i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
+						<i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
+					</div>
+
+					<div class="col-lg-3 col-sm-6">
+						<div class="person"><img class="img-circle" src="img/ourTeam4.jpg"></div>
+						<h3>Dashty Barzange</h3>
+						<i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i>
+						<i class="fa fa-instagram fa-2x" aria-hidden="true"></i>
+						<i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
+						<i class="fa fa-youtube fa-2x" aria-hidden="true"></i>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+
+	<section class="sub text-center">
+		<div class="container">
+			<h1>Keep In Touch</h1>
+			<p class="lead">Customer support and treatment, delivery, BMW Inclusive package, dealer search, advice and purchase.</p>
+			<form class="form-inline">
+				<input class="form-control" type="text" placeholder="write your E-mail">
+				<button class="btn btn-danger fa fa-edit "> Subscribe</button>
+			</form>
+		</div>
+	</section>
+
+
+
+	<section class="stat text-center">
+		<div class="stat1">
+		<div class="container">
+			<h1>This is our main statistics</h1>
+			<div class="row">
+
+				<div class="col-md-3">
+					<div class="data">
+						<i class="fa fa-users fa-5x" aria-hidden="true"></i>
+						<p>145,666</p>
+						<span>Satisfied Client</span>
+					</div>
+				</div>
+
+
+				<div class="col-md-3">
+					<div class="data">
+						<i class="fa fa-comments fa-5x" aria-hidden="true"></i>
+						<p>11,869,677</p>
+						<span>Posted Comments</span>
+					</div>
+				</div>
+
+
+				<div class="col-md-3">
+					<div class="data">
+						<i class="fa fa-car fa-5x" aria-hidden="true"></i>
+						<p>195,699</p>
+						<span>Car Workshop</span>
+					</div>
+				</div>
+
+
+				<div class="col-md-3">
+					<div class="data">
+						<i class="fa fa-cogs fa-5x" aria-hidden="true"></i>
+						<p>63,156</p>
+						<span>Maintenance center</span>
+					</div>
+				</div>
+ 
+			</div>
+		</div>
+		</div>
+	</section>
+
+
+
+
+
+	<section class="disacount">
+		<div class="container">
+			<h1 class="text-center">Our Models Disacounts</h1>
+			<p class="lead text-center">The BMW Mobility Program offers a comprehensive package of free services and is valid throughout Europe.</p>
+			<div class="row">
+
+				
+				<div class="col-md-2"><img src="img/BMW-6.png"></div>
+				<div class="col-md-5"><div class="progress"><div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="53" aria-valuemin="0" aria-valuemax="100" style="width: 53%"></div></div></div>
+				<div class="col-md-4 col-md-offset-1"><h2>BMW-M6-Gran</h2></div>
+				
+
+
+				<div class="col-md-2"><img src="img/BMW-M6.png"></div>
+				<div class="col-md-5"><div class="progress"><div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%"></div></div></div>
+				<div class="col-md-4 col-md-offset-1"><h2>BMW-6-Series</h2></div>
+
+
+
+				<div class="col-md-2"><img src="img/BMW-4.png"></div>
+				<div class="col-md-5"><div class="progress"><div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%"></div></div></div>
+				<div class="col-md-4 col-md-offset-1"><h2>BMW-4-Series</h2></div>
+
+
+
+				<div class="col-md-2"><img src="img/bmw-2.png"></div>
+				<div class="col-md-5"><div class="progress"><div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%"></div></div></div>
+				<div class="col-md-4 col-md-offset-1"><h2>bmw-2-series</h2></div>
+
+				
+			</div>
+		</div>
+	</section>
+
+
+
+
+
+
+	<section class="contact text-center">
+		<div class="us">
+			<div class="container">
+				<div class="row">
+				<i class="fa fa-headphones fa-5x"></i>
+				<h1>We are at your service</h1>
+				<p class="lead">When it counts: We are always by your side</p>
+
+				<form role="form">
+					<div class="col-md-6">
+					<div class="form-group">
+						<input class="form-control" type="text" placeholder="user name">
+					</div>
+					<div class="form-group">
+						<input class="form-control" type="text" placeholder="E-mail">
+					</div>
+					<div class="form-group">
+						<input class="form-control" type="text" placeholder="cell phone">
+					</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="form-group">
+							<textarea class="form-control input-lg" placeholder="your massage"></textarea>
+							<button type="button" class="btn btn-primary btn-lg btn-block">Contact Us</button>
+						</div>
+					</div>
+				</form>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+
+
+
+
+		<section class="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-4 ">
+						<ul class="list-unstyled">
+							<li>Visit BMW in your country or region</li>
+							<li>Quick Links</li>
+							<li>Legal Information</li>
+							<li>Visit Us On</li>
+							<li>Share on</li>
+							<li>More BMW websites</li>
+						</ul>
+					</div>
+
+					<div class="col-xs-8">
+						<ul class="list-unstyled">
+							<li><a href="#">Choose country</a></li>
+
+
+
+							<ul class="list-unstyled list-inline">
+								<li><a href="#">Home</a> </li>
+								<li><a href="#">Careers</a></li>
+								<li><a href="#">Mobile Devices</a></li>
+								<li><a href="#">BMW Apps</a></li>
+								<li><a href="#">EU Detergents</a></li>
+								<li><a href="#">Regulation</a></li>
+							</ul>
+
+
+
+							<ul class="list-unstyled list-inline">
+								<li><a href="#">About BMW.com</a> </li>
+								<li><a href="#">Contact</a></li>
+								<li><a href="#">Cookies</a></li>
+								<li><a href="#">Imprint</a></li>
+								<li><a href="#">Legal Disclaimer/Data protection</a></li>
+							</ul>							
+							
+
+
+							<ul class="list-unstyled list-inline">
+								<li><a href="#">Facebook</a> </li>
+								<li><a href="#">Twitter</a></li>
+								<li><a href="#">Google+</a></li>
+								<li><a href="#">Instagram</a></li>
+								<li><a href="#">YouTube</a></li>
+							</ul>
+
+
+
+							<ul class="list-unstyled list-inline">
+								<li><i class="fa fa-facebook " aria-hidden="true"></i></li>
+								<li><i class="fa fa-google-plus" aria-hidden="true"></i></li>
+								<li><i class="fa fa-twitter" aria-hidden="true"></i></li>
+								<li><i class="fa fa-youtube" aria-hidden="true"></i></li>
+							</ul>							
+
+
+
+							<ul class="list-unstyled list-inline">
+								<li><a href="#">BMW Magazine</a> </li>
+								<li><a href="#">BMW Corporate/Direct Sales</a></li>
+								<li><a href="#">BMW Golfsport</a></li>
+								<li><a href="#">BMW Yachtsport</a></li>
+								<li><a href="#">BMW Motorsport</a></li>
+							</ul>
+
+							      
+						</ul>
+					</div>					
+				</div>
+							<hr class="ds2-main-footer--hr">
+							<p class="ds2-main-footer--copyright text-right">© BMW AG 2017</p>
+			</div>
+		</section>
+
+
+
+
+
+			<script src="js/jquery-3.2.1.min.js"></script>
+			<script src="js/bootstrap.min.js"></script>
+			
+		</body>
+	</html>
